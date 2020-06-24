@@ -1,0 +1,43 @@
+# Se ignorar archivos o directorios indicados
+
+syntax: glob
+
+# ignore for Lightswitch
+*.lsproj.user
+ServiceConfiguration.cscfg
+_Pvt_Extensions/
+GeneratedArtifacts/
+*.orig
+ModelManifest.xml
+*.xap
+
+# ignore for Visual Studio
+.vs
+*.suo
+*.user
+*.sln.docstates
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+packages
+
+
+*DXCore.Solution
+[Tt]humbs.db
+*.user
+*.bak.*
+*.bak
+*.[Cc]ache
+[Pp]ublish/
+*.vssscc
+*.vs10x
+[Dd]otfuscated/
+[Dd]otfuscated/
+*.vsp
+[Nn][Dd]epend[Oo]ut/
+*.licx
+*.docstates
+*.cscfg
+*.csdef
+
