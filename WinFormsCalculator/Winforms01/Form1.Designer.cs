@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UserInputText = new System.Windows.Forms.TextBox();
+            this.txtUserInputText = new System.Windows.Forms.TextBox();
             this.CalculationResultText = new System.Windows.Forms.Label();
             this.ButtonPanel = new System.Windows.Forms.TableLayoutPanel();
             this.EqualBotton = new System.Windows.Forms.Button();
@@ -52,14 +52,14 @@
             this.ButtonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // UserInputText
+            // txtUserInputText
             // 
-            this.UserInputText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtUserInputText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UserInputText.Location = new System.Drawing.Point(12, 29);
-            this.UserInputText.Name = "UserInputText";
-            this.UserInputText.Size = new System.Drawing.Size(460, 20);
-            this.UserInputText.TabIndex = 0;
+            this.txtUserInputText.Location = new System.Drawing.Point(12, 29);
+            this.txtUserInputText.Name = "txtUserInputText";
+            this.txtUserInputText.Size = new System.Drawing.Size(460, 20);
+            this.txtUserInputText.TabIndex = 0;
             // 
             // CalculationResultText
             // 
@@ -314,7 +314,7 @@
             this.ClientSize = new System.Drawing.Size(484, 481);
             this.Controls.Add(this.ButtonPanel);
             this.Controls.Add(this.CalculationResultText);
-            this.Controls.Add(this.UserInputText);
+            this.Controls.Add(this.txtUserInputText);
             this.MinimumSize = new System.Drawing.Size(500, 520);
             this.Name = "Form1";
             this.Text = "Basic Calculator";
@@ -328,7 +328,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox UserInputText;
+        private System.Windows.Forms.TextBox txtUserInputText;
         private System.Windows.Forms.Label CalculationResultText;
         private System.Windows.Forms.TableLayoutPanel ButtonPanel;
         private System.Windows.Forms.Button CEButton;

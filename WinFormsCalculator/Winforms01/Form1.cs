@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Winforms01
@@ -52,7 +53,7 @@ namespace Winforms01
 
         private void CEButton_Click(object sender, EventArgs e)
         {
-            this.UserInputText.Text = string.Empty;
+            this.txtUserInputText.Text = string.Empty;
             FocusInputText();
         }
 
@@ -179,53 +180,89 @@ namespace Winforms01
         #region Private helpers
         private void FocusInputText()
         {
-            this.UserInputText.Focus();
+            this.txtUserInputText.Focus();
         }
 
 
         private void InsertTextValue(string value)
         {
-            var selectionStart = this.UserInputText.SelectionStart;
-            this.UserInputText.Text = this.UserInputText.Text.Insert(this.UserInputText.SelectionStart, value);
-            this.UserInputText.SelectionStart = selectionStart + value.Length;
-            this.UserInputText.SelectionLength = 0;
+            var selectionStart = this.txtUserInputText.SelectionStart;
+            this.txtUserInputText.Text = this.txtUserInputText.Text.Insert(this.txtUserInputText.SelectionStart, value);
+            this.txtUserInputText.SelectionStart = selectionStart + value.Length;
+            this.txtUserInputText.SelectionLength = 0;
         }
         private void DeleteTextValue()
         {
             //if we dont have a value to delete
-            if (this.UserInputText.Text.Length < this.UserInputText.SelectionStart + 1)
+            if (this.txtUserInputText.Text.Length < this.txtUserInputText.SelectionStart + 1)
                 return;
             #endregion
 
             //remember selection start
-            var selectionStart = this.UserInputText.SelectionStart;
+            var selectionStart = this.txtUserInputText.SelectionStart;
             // Delete the character to the right of the selection
 
-            this.UserInputText.Text = this.UserInputText.Text.Remove(this.UserInputText.SelectionStart, 1);
+            this.txtUserInputText.Text = this.txtUserInputText.Text.Remove(this.txtUserInputText.SelectionStart, 1);
             //restore the selection start
-            this.UserInputText.SelectionStart = selectionStart;
+            this.txtUserInputText.SelectionStart = selectionStart;
 
             //set selection lenght to zero
-            this.UserInputText.SelectionLength = 0;
+            this.txtUserInputText.SelectionLength = 0;
         }
 
 
         private void CalculateEquation()
         {
             //TODO: implement exeption
+            bool bResult = false;
 
-            this.CalculationResultText.Text = ParseOperation();
+            //Limpiar de espacios en los extremos
+            string sValue = this.txtUserInputText.Text;
+            sValue = sValue.Trim();
+
+            if (sValue.Length > 0)
+            {
+                bResult = true;
+            } else
+            {
+                bResult = false;
+            }
+            
+            // Validiar que entrada no contenga letras
+            if (bResult == true)
+            {
+                int errorCounter = Regex.Matches(sValue, @"[a-zA-Z]").Count;
+                if (errorCounter == 0)
+                {
+                    bResult = true;
+                } else
+                {
+                    bResult = false;
+                }
+            }
+
+            //SI lo de arriba paso, ahora me toca a mi
+            if (bResult == true)
+            {
+                //validacion especifica
+            }
+
+
+            if (bResult) { 
+                this.CalculationResultText.Text = ParseOperation(sValue);
+            }
 
             // Focus the user input text
             FocusInputText();
         }
 
-        private string ParseOperation()
+        private string ParseOperation(string strEntrada = "0")
         {
             try
             {
                 // Get the users equation input
-                var input = this.UserInputText.Text;
+                //var input = this.UserInputText.Text;
+                var input = strEntrada;
 
                 // Remove all spaces
                 input = input.Replace(" ", "");
