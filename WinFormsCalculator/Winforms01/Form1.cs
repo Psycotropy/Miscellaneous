@@ -97,6 +97,23 @@ namespace Winforms01
             CalculateEquation();
 
             FocusInputText();
+
+            //TODO: Mejorar el encapsulamiento de la logica para la calcu
+            //en una clase
+
+            //Codigo a usar cuando quede implementada la clase
+            // +++++++++++++++++++++++++++++++++++++++++++++++++
+            //cCalcu oCalcu = new cCalcu();
+            //bool bResult = oCalcu.ValidarEntrada(this.txtUserInputText.Text);
+            //if (bResult)
+            //{
+            //    this.CalculationResultText.Text = oCalcu.Resultado(this.txtUserInputText.Text);
+            //} else
+            //{
+            //    this.CalculationResultText.Text = oCalcu.Error();
+            //}
+
+
         }
 
 
