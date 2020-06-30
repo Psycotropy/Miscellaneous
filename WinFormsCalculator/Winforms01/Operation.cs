@@ -20,6 +20,8 @@ namespace Winforms01
 
         public Operation InnerOpertaion { get; set; }
 
+        
+
         #endregion
 
         #region constructors
