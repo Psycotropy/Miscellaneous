@@ -56,16 +56,21 @@
             // 
             this.txtUserInputText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUserInputText.Enabled = false;
+            this.txtUserInputText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserInputText.Location = new System.Drawing.Point(12, 29);
             this.txtUserInputText.Name = "txtUserInputText";
-            this.txtUserInputText.Size = new System.Drawing.Size(460, 20);
+            this.txtUserInputText.Size = new System.Drawing.Size(460, 38);
             this.txtUserInputText.TabIndex = 0;
             // 
             // CalculationResultText
             // 
-            this.CalculationResultText.Location = new System.Drawing.Point(12, 55);
+            this.CalculationResultText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CalculationResultText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CalculationResultText.Location = new System.Drawing.Point(15, 76);
             this.CalculationResultText.Name = "CalculationResultText";
-            this.CalculationResultText.Size = new System.Drawing.Size(375, 51);
+            this.CalculationResultText.Size = new System.Drawing.Size(454, 30);
             this.CalculationResultText.TabIndex = 1;
             this.CalculationResultText.Text = "Please enter an equation and press enter or =";
             // 
