@@ -18,6 +18,8 @@ namespace Winforms01
         public Form1()
         {
             InitializeComponent();
+            numberKeyIsPresed();
+          
 
         }
         #endregion
@@ -55,6 +57,7 @@ namespace Winforms01
         {
             this.txtUserInputText.Text = string.Empty;
             FocusInputText();
+            
         }
 
         private void DelButton_Click(object sender, EventArgs e)
@@ -228,8 +231,29 @@ namespace Winforms01
             return strSubstring;
         }
         
-        
+        private void numberKeyIsPresed()
+        {
+
+            
+        }
+
         #endregion
 
+        
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtUserInputText_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

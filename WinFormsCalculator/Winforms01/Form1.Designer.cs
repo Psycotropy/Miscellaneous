@@ -54,14 +54,16 @@
             // 
             // txtUserInputText
             // 
+            this.txtUserInputText.AllowDrop = true;
             this.txtUserInputText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUserInputText.Enabled = false;
+            this.txtUserInputText.CausesValidation = false;
             this.txtUserInputText.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserInputText.Location = new System.Drawing.Point(12, 29);
             this.txtUserInputText.Name = "txtUserInputText";
             this.txtUserInputText.Size = new System.Drawing.Size(460, 38);
             this.txtUserInputText.TabIndex = 0;
+            this.txtUserInputText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserInputText_KeyPress);
             // 
             // CalculationResultText
             // 
@@ -325,6 +327,7 @@
             this.Text = "Basic Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.Form1_Click);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ButtonPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
